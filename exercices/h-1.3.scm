@@ -1,0 +1,8 @@
+(define (switch x)
+  (define (sword x)
+    (cond ((equal? x 'you) 'me)
+          ((equal? x 'me) 'you)
+          (else x)))
+  (if (null? x)
+      '()
+      (cons (sword (car x)) (switch (cdr x)))))
